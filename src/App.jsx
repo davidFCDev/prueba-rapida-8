@@ -5,18 +5,21 @@ import { Footer } from "./components/Footer";
 import { products as initialProducts } from "./mocks/products.json";
 import { Header } from "./components/Header";
 import { useFilters } from "./hooks/useFilters";
+import { Cart } from "./components/Cart";
+import { IS_DEVELOPMENT } from "./config.js";
 
 function App() {
   const [products] = useState(initialProducts);
-  const { filters, filterProducts, setFilters } = useFilters();
+  const { filterProducts } = useFilters();
 
   const filteredProducts = filterProducts(products);
 
   return (
     <>
-      <Header changeFilters={setFilters} />
+      <Header />
+      <Cart />
       <Products products={filteredProducts} />
-      <Footer filters={filters} />
+      {IS_DEVELOPMENT && <Footer />}
     </>
   );
 }
