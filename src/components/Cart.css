@@ -31,18 +31,19 @@
 
 .cart-button {
   align-items: center;
-  background: #09f;
+  background: cyan;
+  color: black;
   border-radius: 9999px;
   cursor: pointer;
   display: flex;
-  height: 32px;
+  height: 42px;
   justify-content: center;
   padding: 4px;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 20px;
+  top: 20px;
   transition: all 0.3s ease;
-  width: 32px;
+  width: 42px;
   z-index: 9999;
 }
 
