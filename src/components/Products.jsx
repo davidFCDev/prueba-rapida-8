@@ -1,7 +1,24 @@
+import { AddToCartIcon } from "./Icons";
+import "./Products.css";
 
-
-export default function Products() {
+export default function Products({ products }) {
   return (
-    <div>Products</div>
-  )
+    <main className="products">
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            <img src={product.thumbnail} alt={product.title} />
+            <div>
+              <strong>{product.title}</strong> - ${product.price}
+            </div>
+            <div>
+              <button>
+                <AddToCartIcon />
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
 }
